@@ -1,0 +1,62 @@
+<div class="bootstrap-wrapper">
+
+    <div class="container mt">
+  
+      <div class="row">
+  
+        <div class="col-md-6 offset-md-3">
+          <div class="container text-center">
+            <img class="img-fluid" style="width:100px" src="/assets/trolley.png" alt="" />
+          </div>
+  
+          <h1 class="text-center">Login here !!!</h1>
+  
+          <form #myForm="ngForm">
+  
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Username</mat-label>
+              <input  name="username" required 
+              type="text"
+              id="username"  
+              name="username" 
+              value="username"
+              [(ngModel)]="userlogin.username"
+              required
+              minlength="3"
+              maxlength="20"
+              #username="ngModel"
+              [ngClass]="{'is-invaild':username.touched && username.errors}" matInput />
+            </mat-form-field>
+  
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input  type="password" 
+              id="password" 
+              name="password" 
+              value="password"
+              [(ngModel)]="userlogin.password"
+              required
+              minlength="6"
+              #password="ngModel"
+              [ngClass]="{ 'is-invalid': password.touched && password.errors }" matInput />
+            </mat-form-field>
+  
+  
+            <div class="container text-center">
+              <button type="submit" mat-raised-button color="primary" (click)="onLogin()"> Login</button>
+              <button style="margin-left: 10px; ;" type="reset" mat-raised-button color="accent"> Reset</button>
+            </div>
+  
+  
+          </form>
+          <br>
+         
+        
+        </div>
+      </div>
+  
+  
+  
+    </div>
+  
+  </div>
